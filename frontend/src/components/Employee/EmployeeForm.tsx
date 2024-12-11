@@ -22,6 +22,7 @@ import {
 import { omit } from "lodash";
 import { useSelector } from "react-redux";
 
+const DEFAULT_SALARY_AMOUNT = 30000;
 interface EmployeeFormValues {
   name: string;
   phone: string;
@@ -46,7 +47,7 @@ interface Department {
 const EmployeeForm: React.FC = () => {
   const { employeeId } = useParams<{ employeeId: string }>();
   const { departments } = useSelector((state: any) => state.department);
-
+  
   const navigate = useNavigate();
   const isEdit = Boolean(employeeId);
 
@@ -54,7 +55,7 @@ const EmployeeForm: React.FC = () => {
     name: "",
     phone: "",
     email: "",
-    salary: 0,
+    salary: DEFAULT_SALARY_AMOUNT,
     dob: "",
     department_id: 1,
     photo: "",
