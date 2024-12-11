@@ -1,0 +1,54 @@
+@baseUrl = http://localhost:9090
+@urlPath = dev
+
+###
+GET {{baseUrl}}/{{urlPath}}/employees?page=3&pageSize=3
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+GET {{baseUrl}}/{{urlPath}}/employee/502
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+DELETE  {{baseUrl}}/{{urlPath}}/employee/4
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+###
+POST {{baseUrl}}/{{urlPath}}/employees
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "department_id": 4,
+  "name": "HP",
+  "dob": "2001-07-20",
+  "phone": "1234567890",
+  "photo": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+  "email": "abcxyz@gmail.com",
+  "salary": 900020,
+  "status": true
+}
+
+###
+PUT {{baseUrl}}/{{urlPath}}/employees/502
+Content-Type: application/json
+Accept: application/json
+withCredentials: true
+
+{
+  "department_id": 3,
+  "name": "HP Update API Test",
+  "dob": "2001-07-20",
+  "phone": "1234567890",
+  "photo": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
+  "email": "abcxyz@gmail.com",
+  "salary": 900020,
+  "status": true
+}
